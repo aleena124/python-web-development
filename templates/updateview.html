@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>home</title>
+</head>
+<body>
+    <h1>create book</h1>
+    <form action="" method="post">  
+        {% csrf_token %} <!--generate token in server side to safely pass requests-->
+        <label for="">Book Name</label>
+        <input type ="text" name="title" value="{{bookss.title}}">
+
+        <label for="">Book author:</label>
+        <input type ="text" name="author" value="{{bookss.author}}">
+        <label for="">Book price:</label>
+        <input type ="text" name="price" value="{{bookss.price}}">
+
+        <input type="submit" value ="update">
+
+    </form>
+</body>

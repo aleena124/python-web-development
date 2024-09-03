@@ -1,0 +1,66 @@
+
+## RESPONSE RENDERING
+# FIRST  CREATE VIEWS
+# CONFIGURE MY_APP URLS
+    COPY CONTENTS FROM FIRST_PROJECT URLS.PY
+    CONFIGURE VIES IN URLS
+# CREATE TEMPLATES FOLDER
+    CREATE HTML FILES
+    CONFIGURE SETTINGS TEMPLATES DIR
+    CONFIGURE MY_APP URLS
+
+#### database connection
+    create models in models.py file
+    class book(models.Model):
+    title= models.CharField(max_length=200)
+    author= models.CharField(max_length=200)
+    price =models.IntegerField()
+
+
+    def __str__(self):
+        return '{}'.format(self.title)
+
+    AFTER THAT RUN COMMAND python manage.py makemigrations. tO SET SCHEMA
+    #THIS WILL CONNECT TO DATABASE. IT WILL CREATE NEW FILE INSIDE MY_APP makemigrations
+    # RUN COMMAND python manage.py MIGRATE. THIS IS USED TO CREATE A TABULAR FORM TO SCHEMA.
+ 
+ 
+ 
+ #ADMIN PANEL SETUP
+    admin.py file
+    # regitser our model inside admin.py file
+
+    # then run coomand python manage.py createsuperuser
+    #username: admin
+    #pasword:12345
+    #then run command  python manage.py runserver
+    #go to webpage, write/admin in http and go to admin page and login
+    #can add book through admin PANEL
+
+### ORM QUERIS
+    #run command python manage.py shell 
+    # from my_app.models import book
+    ##create
+    #  a= book(title='abcd', author='MT',price=200)
+    # a.save()
+
+    ## show all
+    #  book.objects.all()
+
+    ## update
+    # a=book.objects.get(pk=1)
+    # a.price=500
+    # a.save()
+
+    ##delete
+    # a=book.objects.get(pk=2) 
+    # a.delete()
+
+    ##filter
+     book.objects.filter(price=565) 
+
+     ##exclude
+     book.objects.exclude(price=565)
+
+
+
